@@ -26,5 +26,5 @@ lid_liner_space = 2;
 color("lightblue", 0.4) iso4796_bottle(vessel, thread=bottle_thread);
 
 color("dimgray")
-  translate([0, 0, iso4796_height(vessel) - lid_thread_length - lid_liner_space])
-    din168_cap(lid_gl, thread_length=lid_thread_length, liner_space=lid_liner_space, ribs=48);
+  translate([0, 0, iso4796_height(vessel)])
+    din168_cap(lid_gl, thread_length=lid_thread_length, liner_space=lid_liner_space, ribs=48, skirt = true);
