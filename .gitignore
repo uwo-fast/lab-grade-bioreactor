@@ -1,12 +1,24 @@
-*.tmp
-*.log
-*.bak
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
 *.swp
-*.DS_Store
-*.idea
-*.vscode
-*.pyc
+*~
+
+# Temp files and logs
+*.tmp
+*.bak
+*.log
+
+# Python
 __pycache__/
+*.pyc
 *.egg-info/
-dist/
+.venv/
+
+# Build output
 build/
+dist/
