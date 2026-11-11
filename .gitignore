@@ -1,0 +1,12 @@
+*.tmp
+*.log
+*.bak
+*.swp
+*.DS_Store
+*.idea
+*.vscode
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
