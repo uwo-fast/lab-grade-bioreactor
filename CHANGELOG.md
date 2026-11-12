@@ -12,6 +12,8 @@ release notes, where GitHub turns a line break into a visible one.
 
 ## [Unreleased]
 
+## [2026.11.11]
+
 ### Added
 
 - OpenSCAD top-level assembly (`scad/bioreactor.scad`): a Boro 3.3 5 L bottle with a GLS 80 neck thread and a GLS 80 screw cap seated on the rim.
