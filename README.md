@@ -2,6 +2,12 @@
 
 Open source lab-grade bioreactor
 
+## Releases
+
+Releases are dated snapshots (`YYYY.MM.DD`). What changed is in
+[CHANGELOG.md](CHANGELOG.md); how one is cut is in
+[docs/releasing.md](docs/releasing.md).
+
 ## License
 
 Copyright (C) 2025 FAST Research Group
