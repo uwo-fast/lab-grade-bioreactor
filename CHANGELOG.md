@@ -16,6 +16,7 @@ release notes, where GitHub turns a line break into a visible one.
 
 - Zenodo DOI badge in the README, using the all-versions DOI so it resolves to the latest archived release.
 - `software/` placeholder pointing at where the control software is developed for now (`anolishq/anolis-projects`, `projects/bioreactor-v2`).
+- Tests for `scripts/release.sh` (`just test`), run in a throwaway repo against a stub `gh`.
 ### Fixed
 
 - `bom/2026-09-21/sensors.csv`: removed a leading tab from the pH range, a stray quote from the temperature range, and a trailing space from the off-gas O2 label.
