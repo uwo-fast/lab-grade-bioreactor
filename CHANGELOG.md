@@ -12,6 +12,10 @@ release notes, where GitHub turns a line break into a visible one.
 
 ## [Unreleased]
 
+### Added
+
+- Zenodo DOI badge in the README, using the all-versions DOI so it resolves to the latest archived release.
+
 ## [2026.11.11]
 
 ### Added

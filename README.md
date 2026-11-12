@@ -1,12 +1,15 @@
 # lab-grade-bioreactor
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24148456.svg)](https://doi.org/10.5281/zenodo.24148456)
+
 Open source lab-grade bioreactor
 
 ## Releases
 
 Releases are dated snapshots (`YYYY.MM.DD`). What changed is in
 [CHANGELOG.md](CHANGELOG.md); how one is cut is in
-[docs/releasing.md](docs/releasing.md).
+[docs/releasing.md](docs/releasing.md). Each release is archived on Zenodo; the
+DOI badge above resolves to the latest one.
 
 ## License
 
