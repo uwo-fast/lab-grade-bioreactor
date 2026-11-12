@@ -15,6 +15,7 @@ release notes, where GitHub turns a line break into a visible one.
 ### Added
 
 - Zenodo DOI badge in the README, using the all-versions DOI so it resolves to the latest archived release.
+- `software/` placeholder pointing at where the control software is developed for now (`anolishq/anolis-projects`, `projects/bioreactor-v2`).
 
 ## [2026.11.11]
 
