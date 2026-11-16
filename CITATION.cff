@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it using the metadata below."
+title: "lab-grade-bioreactor"
+abstract: >-
+  An open source, lab-grade bioreactor with closed-loop control over culture
+  parameters.
+type: software
+authors:
+  - family-names: "Brooks"
+    given-names: "Cameron"
+url: "https://github.com/uwo-fast/lab-grade-bioreactor"
+# Only the software licence goes here. A licence list in CFF means "either licence,
+# at your option", which is not what this repository grants; LICENSING.md states the
+# hardware licence.
+license: GPL-3.0-or-later
+# The all-versions (concept) DOI, which resolves to the latest archived release.
+doi: "10.5281/zenodo.24148456"
