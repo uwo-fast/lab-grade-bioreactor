@@ -20,12 +20,17 @@ release notes, where GitHub turns a line break into a visible one.
 - `scadman.toml` and `scadman.lock` pin `iso4796-bottle-scad` and `din168-thread-scad` at `v0.1.0`; `just setup` installs them into `.scadman/env`, which the justfile puts first on `OPENSCADPATH`.
 - `just check` also renders every `scad/` file and fails on any warning (`just check-scad`).
 - CI runs `just check` on OpenSCAD 2026.10.15 with the scadman-pinned libraries, and Dependabot bumps its actions monthly.
-- `CITATION.cff`, for GitHub's **Cite this repository** and Zenodo, and an `.editorconfig`, both from the organization template.
+- `CITATION.cff`, for GitHub's **Cite this repository** and Zenodo, listing Cameron Brooks and Sehan Punchihewa, and an `.editorconfig`, both from the organization template.
 
 ### Changed
 
 - Hardware files are licensed CERN-OHL-S-2.0 instead of GPL-3.0-or-later: the CAD exports and bills of materials under it alone, the OpenSCAD source under both. Scripts stay GPL-3.0-or-later. `LICENSING.md` states what applies where, and `LICENSES/` holds both texts.
 - The README follows the organization template: overview and status, layout, getting started, contributing, citation, licensing and contact.
+- The copyright notice in the README and `scad/bioreactor.scad` covers 2025–2026.
+
+### Removed
+
+- The `SPDX-License-Identifier: GPL-3.0-or-later` line in `scad/bioreactor.scad`, which named only one of the two licences `LICENSING.md` grants for `scad/`.
 
 ### Fixed
 

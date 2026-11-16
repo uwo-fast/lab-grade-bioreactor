@@ -1,5 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
-// Copyright (C) 2025 FAST Research Group
+// Copyright (C) 2025-2026 FAST Research Group
 
 // Lab-grade bioreactor: top-level assembly.
 
