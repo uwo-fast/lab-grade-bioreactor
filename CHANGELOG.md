@@ -17,6 +17,13 @@ release notes, where GitHub turns a line break into a visible one.
 - Zenodo DOI badge in the README, using the all-versions DOI so it resolves to the latest archived release.
 - `software/` placeholder pointing at where the control software is developed for now (`anolishq/anolis-projects`, `projects/bioreactor-v2`).
 - Tests for `scripts/release.sh` (`just test`), run in a throwaway repo against a stub `gh`.
+- `CITATION.cff`, for GitHub's **Cite this repository** and Zenodo, and an `.editorconfig`, both from the organization template.
+
+### Changed
+
+- Hardware files are licensed CERN-OHL-S-2.0 instead of GPL-3.0-or-later: the CAD exports and bills of materials under it alone, the OpenSCAD source under both. Scripts stay GPL-3.0-or-later. `LICENSING.md` states what applies where, and `LICENSES/` holds both texts.
+- The README follows the organization template: overview and status, layout, getting started, contributing, citation, licensing and contact.
+
 ### Fixed
 
 - `bom/2026-09-21/sensors.csv`: removed a leading tab from the pH range, a stray quote from the temperature range, and a trailing space from the off-gas O2 label.
