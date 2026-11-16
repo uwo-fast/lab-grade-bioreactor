@@ -1,0 +1,17 @@
+# The OpenSCAD libraries scad/ uses, and the exact revision of each. scadman.lock records
+# the commit and a content hash for every one; `just setup` installs them into .scadman/env.
+#
+# Each name is the directory the library is exposed as, and must match what the .scad files
+# `use`: `iso4796-bottle-scad/iso4796.scad` needs the library called iso4796-bottle-scad.
+# A `tag`, never a `branch`, so "it renders here" means the same thing on every machine.
+
+[project]
+name = "lab-grade-bioreactor"
+
+[dependencies.iso4796-bottle-scad]
+git = "https://github.com/CameronBrooks11/iso4796-bottle-scad"
+tag = "v0.1.0"
+
+[dependencies.din168-thread-scad]
+git = "https://github.com/CameronBrooks11/din168-thread-scad"
+tag = "v0.1.0"

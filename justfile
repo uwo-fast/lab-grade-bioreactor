@@ -2,9 +2,17 @@
 
 set dotenv-load := false
 
+# The libraries scadman.lock pins, installed by `just setup`. First on OPENSCADPATH, so the
+# pinned copy is used over any installed globally.
+export OPENSCADPATH := justfile_directory() + "/.scadman/env"
+
 # Default: show available recipes
 default:
     @just --list
+
+# Install the OpenSCAD libraries scadman.lock pins into .scadman/env (needs scadman)
+setup:
+    scadman sync
 
 # Format shell scripts (mutates working tree)
 fmt:
@@ -18,8 +26,12 @@ fmt-check:
 lint:
     shellcheck scripts/*.sh tests/*.sh
 
-# Format check + lint (non-mutating)
-check: fmt-check lint
+# Render every scad/ file against the pinned libraries, failing on any diagnostic
+check-scad:
+    scripts/check-scad.sh
+
+# Format check + lint + scad render (non-mutating)
+check: fmt-check lint check-scad
 
 # Run the release script's tests in a throwaway repo
 test:

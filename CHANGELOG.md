@@ -17,6 +17,10 @@ release notes, where GitHub turns a line break into a visible one.
 - Zenodo DOI badge in the README, using the all-versions DOI so it resolves to the latest archived release.
 - `software/` placeholder pointing at where the control software is developed for now (`anolishq/anolis-projects`, `projects/bioreactor-v2`).
 - Tests for `scripts/release.sh` (`just test`), run in a throwaway repo against a stub `gh`.
+- `scadman.toml` and `scadman.lock` pin `iso4796-bottle-scad` and `din168-thread-scad` at `v0.1.0`; `just setup` installs them into `.scadman/env`, which the justfile puts first on `OPENSCADPATH`.
+- `just check` also renders every `scad/` file and fails on any warning (`just check-scad`).
+- CI runs `just check` on OpenSCAD 2026.10.15 with the scadman-pinned libraries, and Dependabot bumps its actions monthly.
+
 ### Fixed
 
 - `bom/2026-09-21/sensors.csv`: removed a leading tab from the pH range, a stray quote from the temperature range, and a trailing space from the off-gas O2 label.
