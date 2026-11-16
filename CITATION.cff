@@ -8,6 +8,8 @@ type: software
 authors:
   - family-names: "Brooks"
     given-names: "Cameron"
+  - family-names: "Punchihewa"
+    given-names: "Sehan"
 url: "https://github.com/uwo-fast/lab-grade-bioreactor"
 # Only the software licence goes here. A licence list in CFF means "either licence,
 # at your option", which is not what this repository grants; LICENSING.md states the

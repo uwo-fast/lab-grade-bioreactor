@@ -61,7 +61,7 @@ repository** button on GitHub, or see [`CITATION.cff`](CITATION.cff).
 
 ## License
 
-Copyright (C) 2025 FAST Research Group
+Copyright (C) 2025–2026 FAST Research Group
 
 This project is free software: you may redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
