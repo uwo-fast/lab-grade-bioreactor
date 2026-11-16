@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Render every scad/*.scad file and fail on any diagnostic.
 #
-# The exit code alone is not enough: --hardwarnings makes a WARNING exit non-zero, but a
-# DEPRECATED message still exits 0, so the output is searched as well.
+# --hardwarnings makes a WARNING exit non-zero. On OpenSCAD 2021.01 a DEPRECATED message
+# still exits 0, so the output is searched as well, which holds on any version.
 set -uo pipefail
 
 tmp=$(mktemp -d)
