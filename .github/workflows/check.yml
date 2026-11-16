@@ -1,0 +1,59 @@
+# Runs `just check`, the same gate run locally before a commit: shell format and lint,
+# and a render of every scad/ file against the libraries scadman.lock pins.
+#
+# OpenSCAD is pinned to the development snapshot the libraries are tested on, not apt's
+# 2021.01. Snapshots stay on files.openscad.org for months, not forever: move the date and
+# its sha256 together.
+
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: extractions/setup-just@v4
+
+      - name: Install shfmt
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends shfmt
+          shellcheck --version
+
+      # The AppImage is extracted, so it needs no FUSE; it takes its GL libraries from the host.
+      - name: Install OpenSCAD
+        env:
+          OPENSCAD_SNAPSHOT: "2026.10.15"
+          OPENSCAD_SHA256: "9d26e390d3a5c94f2e304d94d7b2eff77fb11fcd25829f2814de147ba92ac363"
+        run: |
+          sudo apt-get install -y -qq --no-install-recommends libegl1 libgl1 libopengl0 libglx0 libgbm1 libwayland-client0 libx11-xcb1
+          dir="$RUNNER_TEMP/openscad"
+          file="OpenSCAD-$OPENSCAD_SNAPSHOT-x86_64.AppImage"
+          mkdir -p "$dir/bin"
+          curl -fsSL -o "$dir/$file" "https://files.openscad.org/snapshots/$file"
+          echo "$OPENSCAD_SHA256  $dir/$file" | sha256sum -c -
+          chmod +x "$dir/$file"
+          (cd "$dir" && "./$file" --appimage-extract > /dev/null)
+          printf '#!/bin/sh\nexec "%s/squashfs-root/AppRun" "$@"\n' "$dir" > "$dir/bin/openscad"
+          chmod +x "$dir/bin/openscad"
+          echo "$dir/bin" >> "$GITHUB_PATH"
+          "$dir/bin/openscad" --version
+
+      # Installs scadman and syncs the libraries scadman.lock pins into .scadman/env,
+      # which the justfile puts on OPENSCADPATH.
+      - name: Install the OpenSCAD libraries
+        uses: CameronBrooks11/scadman/setup@v0.1.0-alpha.8
+        with:
+          sync: "true"
+
+      - name: just check
+        run: just check

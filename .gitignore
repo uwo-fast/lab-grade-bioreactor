@@ -22,3 +22,6 @@ __pycache__/
 # Build output
 build/
 dist/
+
+# OpenSCAD libraries installed by `just setup` (scadman sync)
+.scadman/

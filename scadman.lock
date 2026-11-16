@@ -1,0 +1,14 @@
+version = 1
+
+[[package]]
+name = "din168-thread-scad"
+source = "https://github.com/CameronBrooks11/din168-thread-scad"
+rev = "8d8bb8f81b48aeca447e8caa71adb7aa1ce69892"
+hash = "85b2c49bb0425df3aaf3fefdcc8a31da54a53800a1cbfd92a7df1a7ff5ff36c2"
+
+[[package]]
+name = "iso4796-bottle-scad"
+source = "https://github.com/CameronBrooks11/iso4796-bottle-scad"
+rev = "be2437e2e4fdd53252b4a8aa66b99a5f2db1cd94"
+hash = "688794288a0ec78a5936e7d06584744972f0b1da2e0c872428275ed9b30bdc05"
+dependencies = ["din168-thread-scad"]
